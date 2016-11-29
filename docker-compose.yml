@@ -12,3 +12,9 @@ mysql:
   volumes:
     - "/home/wadouk/traning/valtech/isep-devops/mysql-jdbc-vaadin/data:/var/lib/mysql"
     - "/home/wadouk/traning/valtech/isep-devops/mysql-jdbc-vaadin/init-db:/docker-entrypoint-initdb.d"
+app:
+  image: mysql-jdbc-vaadin
+  ports:
+    - "666:8080"
+  links:
+    - mysql:mysql
